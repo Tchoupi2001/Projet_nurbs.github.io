@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="projet.css">
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f4;
+        }
+        header{ 
+            background-color: #003366; 
+            color: white; 
+            text-align: center; 
+            padding: 20px 0; 
+        }
+        nav ul { 
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0;
+            text-align: center; 
+        }
+        nav ul li { 
+            display: inline; 
+            margin: 0 20px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2em;
+        }
+        .banner { 
+            background-color: #ddd; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .content { 
+            margin: 20px; 
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2, .banner h2 {
+            font-size: 2.5em; /* Augmentation de la taille des titres */
+            color: #003366; /* Couleur des titres pour un meilleur contraste */
+            margin-bottom: 20px;
+        }
+        .content h1, .banner h1 {
+            font-size: 5.0em; /* Augmentation de la taille des titres */
+            color: #003366; /* Couleur des titres pour un meilleur contraste */
+            margin-bottom: 20px;
+        }
+        .content p, .banner p, footer p {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #0c0c0c; /* Couleur du texte pour améliorer la lisibilité */
+        }
+        .content footer p {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #ffffff; /* Couleur du texte pour améliorer la lisibilité */
+        }
+        .content img, .banner img { 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            margin: 20px auto; 
+        }
+        .equation-box {
+            border: 2px solid #000;
+            padding: 20px;
+            background-color: #f8bf03;
+            text-align: center;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #003366; /* Couleur de fond du footer */
+            color: #ffffff; /* Couleur du texte pour un meilleur contraste */
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1em;
+        }
+   
+    
+        /* Styles supplémentaires pour améliorer la visibilité */
+        a.footer-link {
+            color: #99ccff; /* Couleur des liens pour les distinguer du texte normal, ajustez selon le besoin */
+            text-decoration: none; /* Optionnel : enlève le soulignement des liens */
+        }
+    
+        a.footer-link:hover {
+            text-decoration: underline; /* Ajoute un soulignement au survol pour indiquer qu'il s'agit d'un lien */
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Recap</h1> <!-- Add your project title here -->
+        <nav>
+            <ul>
+                <li><a href="projet.html">Project-details</a></li>
+                <li><a href="Recap.html">Recap of the project</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <h1>NURBS Surfaces for Topology Optimization Problems</h1>    
+    
+        <div style="display: inline-block; text-align: center;">
+            <img src="/home/willy/Bureau/site/logo_em.jpg" alt="" style="width: 400px;">
+            <p><button onclick="location.href='https://enseirb-matmeca.bordeaux-inp.fr/fr'">En savoir plus</button></p>
+        </div>
+        
+        <!-- Deuxième paire d'image et de bouton -->
+        <div style="display: inline-block; text-align: center;">
+            <img src="/home/willy/Bureau/site/ArtsMetiers.jpg" alt="" style="width: 400px;">
+            <p><button onclick="location.href='https://www.artsetmetiers.fr/fr'">En savoir plus</button></p>
+        </div>
+        
+        <!-- Troisième paire d'image et de bouton -->
+        <div style="display: inline-block; text-align: center;">
+            <img src="/home/willy/Bureau/site/Footer-I2M.png" alt="" style="width: 400px;">
+            <p><button onclick="location.href='https://www.i2m.u-bordeaux.fr/'">En savoir plus</button></p>
+        </div>
+    </div>
+
+    <div class="content">
+        <section id="project-overview">
+            <h2>Présentation of projetct</h2>
+                <p>The study of particle transport in various physical systems plays a pivotal role in understanding complex phenomena across diverse scientific domains. One fundamental equation that governs the behavior of particles is the linear Boltzmann equation, which describes the evolution of particle distribution in phase space. This equation has broad applications, ranging from nuclear reactor physics and radiation shielding design to medical imaging and astrophysics.</p>
+                <p>In this project, we delve into the numerical solution of the linear Boltzmann equation, leveraging the powerful Monte Carlo method. Monte Carlo methods have proven to be versatile and efficient tools for tackling complex problems in physics, finance, and engineering. By applying these methods to the linear Boltzmann equation, we aim to develop a computational framework that provides accurate and reliable solutions to intricate particle transport problems.</p>
+                <p>Furthermore, we introduce a semi-analog Monte Carlo scheme as a method to solve our problem. Ultimately, this project aims to contribute to the understanding and application of the linear Boltzmann equation, offering a valuable computational tool for solving real-world problems in particle transport.</p>
+
+    
+        
+            <!-- <p style="text-align: center;"></p>
+            <div style="display: flex; justify-content: center;">
+                <img src="/home/willy/Bureau/site/NURBS_3-D_surface.gif" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
+                <img src="/home/willy/Bureau/site/Surface_modelling.svg.png" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
+            </div> -->
+            <p>The NURBS surface is defined as:</p>
+            
+            <p>
+            \begin{equation*}
+            S(u,v) = \sum_{i=0}^{n_u} \sum_{j=0}^{n_v} R_{i,j}(u,v) P_{i,j}
+            \end{equation*}
+            where:
+            </p>
+            
+            <p>- \( R_{i,j}(u,v) \): Piecewise Rational Basis Functions</p>
+            <p>-\(P_{i,j}= x_{i,j} , y_{i,j}, z_{i,j}\): Control Points</p>
+            <p>   
+            \begin{equation*}
+                R_{i,j}(u,v) = \frac{N_{i,p}(u)N_{j,q}(v)w_{i,j}}{\sum_{k=0}^{n_u} \sum_{l=0}^{n_v} N_{k,p}(u)N_{l,q}(v)w_{k,l}}
+            \end{equation*}
+            where:\
+            </p>- \(N_{i,p}(u), N_{j,q}(v)\): Blending Functions</p>
+            <p>- \(p\) and \(q\): NURBS Degrees along \(u\) and \(v\) directions</p>
+            <p> \(w_{i,j}\): Weights</p>
+            \begin{equation*}
+                N_{i,0}(u) = 
+                \begin{cases} 
+                    1 & \text{if } U_i \leq u < U_{i+1} \\
+                    0 & \text{otherwise}
+                \end{cases}
+            \end{equation*}
+            \begin{equation*}
+                N_{i,p}(u) = \frac{u - U_i}{U_{i+p} - U_i} N_{i,p-1}(u) + \frac{U_{i+p+1} - u}{U_{i+p+1} - U_{i+1}} N_{i+1,p-1}(u)
+            \end{equation*}
+
+                    
+                <div class="equation-box">
+                    \begin{equation*}
+                        R_{i,j} = 0 \text{ si } (u,v) \text{ est à l'extérieur de } [ U_i, U_{i+p+1}[ \times [ V_j, V_{j+q+1}[
+                    \end{equation*}
+                </div>
+        
+            
+        </section>
+
+    <section id="Contents">
+        <div class="summary-content">
+            <h2>Contents</h2>
+            <p>This site contains a summary of our work carried out over the last few months with the Nurbs with the aim of optimizing the topology and the different calculation codes made available to us at the start. Some representations have been made but the main code is not is accessible only by special request.</p>
+        </div>
+    </section>
+
+
+    <section id = "Exemple of NURBS">
+        <div style="display: flex; justify-content: center;">
+            <h2>Exemple of NURBS</h2>
+        </div> 
+    </section>
+
+    <div style="display: flex; justify-content: center;">
+        <img src="/home/willy/Bureau/site/NURBS_3-D_surface.gif" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
+        <img src="/home/willy/Bureau/site/Surface_modelling.svg.png" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
+        
+    </div> 
+
+
+    <section id="Conclusion and acknowledgement">
+        <div class="summary-content">
+            <h2>Conclusion and acknowledgement</h2>
+            <p> We would first like to express a sincere thank you to our tutor ZERROUQ Salah-eddine who allowed us to obtain concepts on a subject until now very little known to all of us. Through his pedagogical sense and his passion, he was able to communicate to us and pass on his knowledge to us so that we can achieve our objectives.</p>
+            <p>Despite the fact that these objectives were not completely achieved due to time and parallel activities, we were able to successfully complete the main objective and had very satisfactory and conclusive results. These open a door for a potential continuation of this subject in the years to come</p>
+        </div>
+    </section>
+    
+  
+    <footer>
+        <p>&copy; 2024 C.TOULER - Z.ZIAD - A. EL GODE - M.NAIM - Y.REDOUANE. All right reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.min.js"></script>
+    
+</body>
+</html>
+    
