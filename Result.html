@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fff; /* Set background color to white */
+        }
+        header, footer { 
+            background-color: #003366; 
+            color: white; 
+            text-align: center; 
+            padding: 20px 0; 
+        }
+        .content { 
+            margin: 0 auto; /* Center the content */
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Set width to 100% */
+            border-radius: 10px; /* Added border-radius for smoother edges */
+        }
+        h1, h2 {
+            font-size: 3em;
+            color: #004488;
+            text-align: center;
+            margin: 40px 0 20px;
+            padding: 10px 0;
+            border-bottom: 4px solid #003366;
+            display: inline-block;
+            width: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        h1:hover, h2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #080808;
+            margin-bottom: 20px;
+        }
+        .image-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-group img { 
+            max-width: 100%; /* Ensures images don't exceed container width */
+            display: block; /* Centers the image */
+            margin: 0 auto; /* Centers the image */
+        }
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        footer p {
+            margin: 0; /* Removes default paragraph margin in the footer */
+        }
+        nav ul { 
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0;
+            text-align: center; 
+        }
+        nav ul li { 
+            display: inline; 
+            margin: 0 10px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Project Recap</a></li>
+                <li><a href="Problem definition.html">Problem Definition</a></li>
+                <li><a href="architecture.html">Code Architecture</a></li>
+                <li><a href="Result.html">Results</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+
+        <section id="introduction">
+            <p>To begin with, over 50 functions were implemented and tested. Validation was carried 
+                out in stages. First, validation of Local support produced by the first part of the 
+                python code, then validation of Local support and BF support in 2D and 3D, and finally 
+                validation of Der_Topo.</p>
+        </section>
+
+
+        <section id="2D validation">
+            <h2>2D Validation</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="2d_localsupport_c.PNG" alt="Calculation of Speed-up for 2D implementation">
+                    <img src="2d_localsupport_Py.PNG" alt="Calculation of Efficiency for 2D implementation">
+                </div>
+                <p class="image-caption">Local Support Matrix in C and Python for 2D</p>
+                <p>The first test is carried out in 2D and after a comparison between the Local 
+                    Support values we have our three outputs (Local_support, BF_support, and IND_Mask_Active). 
+                    The overall error is almost zero except for BF_support, for which it is 10^-10. 
+                    The conclusion to be drawn is that our code is conformatic in 2D.</p>
+            </div>
+        </section>
+
+        <section id="3D validation">
+            <h2>3D Validation</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="C_localsupport.png" alt="Calculation of Speed-up for 3D implementation">
+                    <img src="Python_LS.png" alt="Calculation of Efficiency for 3D implementation">
+                </div>
+                <p class="image-caption">Local Support Matrix in C and Python for 3D</p>
+                <p>In the same way as in 2D, we carry out tests in 3D, comparing our new outputs
+                     (Local_support, BF_support, IND_Mask_Active, der_W, der_CP, BF_Mask). 
+                     The final error is of the order of 10^-7, which validates all our code. 
+                     However, some functions could not be finalized in 2D but in 3D, the exploration 
+                     of parallelism through OpenMP was developed.</p>
+            </div>
+        </section>
+
+        <section id="3D openMP">
+            <h2>3D OpenMP</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="dernurbs_speed.png" alt="Calculation of Speed-up for 3D implementation">
+                    <img src="dernurbs_eff.png" alt="Calculation of Efficiency for 3D implementation">
+                </div>
+                <p class="image-caption">Calculation of Speed-up & Efficiency for 3D implementation of der_Nurbs</p>
+                <div class="photo">
+                    <img src="speed3d.png" alt="Calculation of Speed-up for 3D implementation">
+                    <img src="efficiency.png" alt="Calculation of Efficiency for 3D implementation">
+                </div>
+                <p class="image-caption">Calculation of Speed-up & Efficiency for 3D implementation of local_support function</p>
+            </div>
+        </section>
+
+        <section id="2D openMP">
+            <h2>2D OpenMP</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="speed2d.png" alt="Calculation of Speed-up for 2D implementation">
+                    <img src="efficiency2d.png" alt="Calculation of Efficiency for 2D implementation">
+                </div>
+                <p class="image-caption">Calculation of Speed-up & Efficiency for 2D implementation of der_Nurbs</p>
+            </div>
+        </section>
+
+        <section id="performance">
+            <h2>Performance Summary</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="image.png" alt="Performance Summary">
+                </div>
+                <p class="image-caption">Performance Summary</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 C.TOULER - Z.ZIAD - A. EL GODE - M.NAIM - Y.REDOUANE. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <style>
         body { 
-            font-family: 'Arial', sans-serif; 
+            font-family: 'Roboto Slab', sans-serif; 
             margin: 0; 
             padding: 0; 
             background-color: #f4f4f4;
@@ -112,102 +112,77 @@
 </head>
 <body>
     <header>
-        <h1>Project Recap</h1> <!-- Add your project title here -->
+        <h1>HPC Project Report </h1> <!-- Add your project title here -->
         <nav>
             <ul>
-                <li><a href="index.html">Project-details</a></li>
-                <li><a href="Recap.html">Recap of the project</a></li>
+                <li><a href="index.html">Recap of the project</a></li>
+                <li><a href="Problem definition.html">Problem definition</a></li>
+                <li><a href="architecture.html"> Code architechture </a></li>
+                <li><a href="Result.html">Results</a></li> 
                 <li><a href="about.html">About</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="banner">
-        <h1>NURBS Surfaces for Topology Optimization Problems</h1>    
+        <!-- <h1>NURBS Surfaces for Topology Optimization Problems</h1>     -->
+        <h1 style="font-family: 'Roboto Slab', sans-serif; font-size: 58px; font-weight: bold; color: #333;">NURBS Surfaces for Topology Optimization Problems</h1>
+        <!-- <p>This div includes an image named <strong>NURB.png</strong>:</p> -->
     
         <div style="display: inline-block; text-align: center;">
-            <img src="logo_em.jpg" alt="" style="width: 400px;">
+            <img src="logo_enseirb.png" alt="" style="width: 300px;">
             <p><button onclick="location.href='https://enseirb-matmeca.bordeaux-inp.fr/fr'">En savoir plus</button></p>
         </div>
         
         <!-- Deuxième paire d'image et de bouton -->
         <div style="display: inline-block; text-align: center;">
-            <img src="ArtsMetiers.jpg" alt="" style="width: 400px;">
+            <img src="arts.png" alt="" style="width: 300px;">
             <p><button onclick="location.href='https://www.artsetmetiers.fr/fr'">En savoir plus</button></p>
         </div>
         
         <!-- Troisième paire d'image et de bouton -->
         <div style="display: inline-block; text-align: center;">
-            <img src="Footer-I2M.png" alt="" style="width: 400px;">
+            <img src="I2M.png" alt="" style="width: 400px;">
             <p><button onclick="location.href='https://www.i2m.u-bordeaux.fr/'">En savoir plus</button></p>
         </div>
     </div>
 
     <div class="content">
         <section id="project-overview">
-            <h2>Présentation of projetct</h2>
-                <p>Welcome to our dedicated platform on NURBS Surfaces for Topology Optimization Problems, a specialized resource aimed at professionals, researchers, and enthusiasts in the fields of computational geometry, engineering design, and optimization. Non-Uniform Rational B-Splines (NURBS) are a mathematical model providing great flexibility and precision in representing both standard geometric shapes and complex free-form surfaces. This versatility makes NURBS an indispensable tool in the realm of topology optimization, where the goal is to find the most efficient material distribution within a given space, subject to certain constraints and performance criteria.</p>
-                <p>Topology optimization has become a cornerstone in various engineering disciplines, including aerospace, automotive, civil engineering, and biomechanics, to design components that are not only lighter and less costly but also mechanically and structurally more efficient. The integration of NURBS surfaces in this optimization process allows for the creation of smooth, highly refined geometries that traditional mesh-based approaches may struggle to accurately represent.</p>
-                <p>Our website offers an overview of the theory and application of NURBS in topological optimization problems. </p>
-                <p>Join us as we explore the intersection of mathematical modeling and engineering innovation through the prism of NURBS surfaces and topology optimization. Discover how these tools have enabled us engineering students to develop parallelism, and optimization for their uses.</p>
-    
-        
-            <!-- <p style="text-align: center;"></p>
-            <div style="display: flex; justify-content: center;">
-                <img src="/home/willy/Bureau/site/NURBS_3-D_surface.gif" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
-                <img src="/home/willy/Bureau/site/Surface_modelling.svg.png" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
-            </div> -->
-            <p>The NURBS surface is defined as:</p>
-            
-            <p>
-            \begin{equation*}
-            S(u,v) = \sum_{i=0}^{n_u} \sum_{j=0}^{n_v} R_{i,j}(u,v) P_{i,j}
-            \end{equation*}
-            where:
-            </p>
-            
-            <p>- \( R_{i,j}(u,v) \): Piecewise Rational Basis Functions</p>
-            <p>-\(P_{i,j}= x_{i,j} , y_{i,j}, z_{i,j}\): Control Points</p>
-            <p>   
-            \begin{equation*}
-                R_{i,j}(u,v) = \frac{N_{i,p}(u)N_{j,q}(v)w_{i,j}}{\sum_{k=0}^{n_u} \sum_{l=0}^{n_v} N_{k,p}(u)N_{l,q}(v)w_{k,l}}
-            \end{equation*}
-            where:\
-            </p>- \(N_{i,p}(u), N_{j,q}(v)\): Blending Functions</p>
-            <p>- \(p\) and \(q\): NURBS Degrees along \(u\) and \(v\) directions</p>
-            <p> \(w_{i,j}\): Weights</p>
-            \begin{equation*}
-                N_{i,0}(u) = 
-                \begin{cases} 
-                    1 & \text{if } U_i \leq u < U_{i+1} \\
-                    0 & \text{otherwise}
-                \end{cases}
-            \end{equation*}
-            \begin{equation*}
-                N_{i,p}(u) = \frac{u - U_i}{U_{i+p} - U_i} N_{i,p-1}(u) + \frac{U_{i+p+1} - u}{U_{i+p+1} - U_{i+1}} N_{i+1,p-1}(u)
-            \end{equation*}
-
-                    
-                <div class="equation-box">
-                    \begin{equation*}
-                        R_{i,j} = 0 \text{ si } (u,v) \text{ est à l'extérieur de } [ U_i, U_{i+p+1}[ \times [ V_j, V_{j+q+1}[
-                    \end{equation*}
-                </div>
-        
-            
+            <h2>Project Presentation</h2>
+            <p> This website contains a summary of our HPC project carried out over the last few months. This project concerns NURBS Surfaces for Topology Optimization Problems, a specialized resource aimed at professionals, researchers, and enthusiasts in the fields of computational geometry, engineering design, and optimization. Non-Uniform Rational B-Splines (NURBS) are a mathematical model providing great flexibility and precision in representing both standard geometric shapes and complex free-form surfaces. This versatility makes NURBS an indispensable tool in the realm of topology optimization, where the goal is to find the most efficient material distribution within a given space, subject to certain constraints and performance criteria.</p>
+            <p>Topology optimization has become a cornerstone in various engineering disciplines, including aerospace, automotive, civil engineering, and biomechanics, to design components that are not only lighter and less costly but also mechanically and structurally more efficient. The integration of NURBS surfaces in this optimization process allows for the creation of smooth, highly refined geometries that traditional mesh-based approaches may struggle to accurately represent.</p>
+            <p>Our website offers an overview of the theory and application of NURBS in topological optimization problems. </p>
+            <p>Join us as we explore the intersection of mathematical modeling and engineering innovation through the prism of NURBS surfaces and topology optimization. Discover how these tools have enabled us engineering students to transition the computational aspects of a Topology Optimization software known as SANTO.</p>
+            <p> Many parts of this software, originally developed in Python within the I2M Laboratory, has been successfully migrated to C and parrallel implementation usi OpenMP was used to accelerate and optimize some computational hot spots in the code. For further details, go to the section  <a href="Problem definition.html"> <strong> Project-details.</strong></a> </p>.
+   
         </section>
 
+
+
     <section id="Contents">
-        <div class="summary-content">
-            <h2>Contents</h2>
-            <p>This site contains a summary of our work carried out over the last few months with the Nurbs with the aim of optimizing the topology and the different calculation codes made available to us at the start. Some representations have been made but the main code is not is accessible only by special request.</p>
-        </div>
+        <div>
+            <h2>Main Applications of NURBS Surfaces</h2>
+            <p>NURBS (Non-Uniform Rational B-Splines) surfaces are widely used in computer graphics and design due to their flexibility and precision. Here are some of their main applications:</p>
+        
+            <ol>
+              <li><strong>Computer-Aided Design (CAD):</strong> NURBS surfaces play a crucial role in CAD applications for representing and manipulating 3D geometry. They allow designers to create smooth and accurate surfaces for various objects and structures.</li>
+        
+              <li><strong>Animation and Gaming:</strong> In the field of animation and gaming, NURBS surfaces are employed to model and animate characters, environments, and objects. Their ability to provide smooth and curved surfaces makes them suitable for realistic representations.</li>
+        
+              <li><strong>Automotive Design:</strong> Automotive designers utilize NURBS surfaces to model car bodies and interior components. The smooth curves and surfaces achieved with NURBS aid in creating aesthetically pleasing and aerodynamically efficient designs.</li>
+        
+              <li><strong>Aerospace Industry:</strong> NURBS surfaces are extensively used in the aerospace industry for designing aircraft and spacecraft. They help in creating complex and streamlined shapes that meet specific performance and aerodynamic requirements.</li>
+        
+              <li><strong>Medical Imaging:</strong> In medical applications, NURBS surfaces find use in representing and visualizing anatomical structures. They enable the creation of accurate 3D models from medical imaging data for surgical planning and educational purposes.</li>
+            </ol>
+        
+          </div>
     </section>
 
 
-    <section id = "Exemple of NURBS">
+    <!-- <section id = "Exemple of NURBS">
         <div style="display: flex; justify-content: center;">
             <h2>Exemple of NURBS</h2>
         </div> 
@@ -217,12 +192,19 @@
         <img src="/home/willy/Bureau/site/NURBS_3-D_surface.gif" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
         <img src="/home/willy/Bureau/site/Surface_modelling.svg.png" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
         
-    </div> 
+    </div>  -->
 
 
-    <section id="Conclusion and acknowledgement">
+    <div id="image-container">
+        <h3>Example of a NURBS surface</h3>
+        <!-- <p>This div includes an image named <strong>NURB.png</strong>:</p> -->
+        <img src="NURBS.png" alt="NURBS Image">
+    </div>
+
+
+    <section id="Acknowledgements">
         <div class="summary-content">
-            <h2>Conclusion and acknowledgement</h2>
+            <h2>Acknowledgements</h2>
             <p> We would first like to express a sincere thank you to our tutor ZERROUQ Salah-eddine who allowed us to obtain concepts on a subject until now very little known to all of us. Through his pedagogical sense and his passion, he was able to communicate to us and pass on his knowledge to us so that we can achieve our objectives.</p>
             <p>Despite the fact that these objectives were not completely achieved due to time and parallel activities, we were able to successfully complete the main objective and had very satisfactory and conclusive results. These open a door for a potential continuation of this subject in the years to come</p>
         </div>

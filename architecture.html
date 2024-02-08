@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture d'un code</title>
+    <style>
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fff; /* Set background color to white */
+        }
+        header, footer { 
+            background-color: #003366; 
+            color: white; 
+            text-align: center; 
+            padding: 20px 0; 
+        }
+        .content { 
+            margin: 0 auto; /* Center the content */
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Set width to 100% */
+            border-radius: 10px; /* Added border-radius for smoother edges */
+        }
+        h1, h2 {
+            font-size: 3em;
+            color: #004488;
+            text-align: center;
+            margin: 40px 0 20px;
+            padding: 10px 0;
+            border-bottom: 4px solid #003366;
+            display: inline-block;
+            width: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        h1:hover, h2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #080808;
+            margin-bottom: 20px;
+        }
+        .image-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-group img { 
+            max-width: 100%; /* Ensures images don't exceed container width */
+            display: block; /* Centers the image */
+            margin: 0 auto; /* Centers the image */
+        }
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        footer p {
+            margin: 0; /* Removes default paragraph margin in the footer */
+        }
+        nav ul { 
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0;
+            text-align: center; 
+        }
+        nav ul li { 
+            display: inline; 
+            margin: 0 10px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Recap of the project</a></li>
+                <li><a href="Problem definition.html">Problem definition</a></li>
+                <li><a href="architecture.html"> Code architechture </a></li>
+                <li><a href="Result.html">Results</a></li> 
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>CODE IN PYTHON</h2>
+        <p>The code we're working with is debased in Python. It consists of two parts, one for calculating Local support and the other 
+            for calculating Volume gradient and Compliance gradient.</p>
+
+            <img src="structure_python1.png" alt="Équation NURBS" style="width: 47%; margin: 0 10px;">
+            <img src="structure_python2.png" alt="Équation NURBS" style="width: 47%; margin: 0 10px;">
+
+        <p>We therefore use this python code to define a C architecture. </p>
+
+        <h2>CODE EN C</h2>
+        <p></p>
+
+            <img src="structure_c.png" alt="Équation NURBS" style="width: 80%; margin: 0 50px;">
+       
+        <p>However, since Python and C are two quite distant and different languages, we have a few problems.</p>
+
+        <div class="container">
+            <div class="box">
+                <h2>Problem</h2>
+                <ul>
+                    <li>No predifined structures for vectors , 2D/3D matrices or list vectors</li>
+                    <li>Big usage of memory space for large data structures (BF support =
+                        5GB matrix)</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>Solutions</h2>
+                <p>To solve these problems, we have </p>
+                <ul>
+                    <li>creation of new data structures suitable
+                        for our problem</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h2>DATA STRUCTURE</h2>
+        
+        <div class="container">
+            <div class="box">
+                <h3 style="color: #004488; font-size: 1.5em; margin-bottom: 10px;">Matrix</h3>
+                <p style="font-size: 1.1em;">A data structure to represent a Matrix</p>
+                <pre style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                    <code style="font-family: 'Courier New', Courier, monospace;">
+        typedef struct {
+            double *data;
+            int rows;
+            int cols;
+            int depth;
+        } Matrix;
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <h3 style="color: #004488; font-size: 1.5em; margin-bottom: 10px;">Vector</h3>
+                <p style="font-size: 1.1em;">A data structure to represent a Vector</p>
+                <pre style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                    <code style="font-family: 'Courier New', Courier, monospace;">
+        typedef struct {
+            double *data;
+            int size;
+        } Vector;
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <h3 style="color: #004488; font-size: 1.5em; margin-bottom: 10px;">List of Vector</h3>
+                <p style="font-size: 1.1em;">A data structure to represent a list of vectors</p>
+                <pre style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                    <code style="font-family: 'Courier New', Courier, monospace;">
+        typedef struct {
+            double *data;
+            int length;
+        } ListOfVector;
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <p>As matrices are extremely hollow in the Pyton code, we perform a COO stcokage in 
+            C to optimize the use of our memory, as follows:</p>
+
+            <img src="frame1.png" alt="stockage COO" style="width: 80%; margin: 0 70px;">
+
+            <div class="container">
+                <div class="box">
+                    <h3 style="color: #004488; font-size: 1.5em; margin-bottom: 10px;">COO Matrix</h3>
+                    <p style="font-size: 1.1em;">A data structure to represent stockage by COO</p>
+                    <pre style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                        <code style="font-family: 'Courier New', Courier, monospace;">
+            typedef struct {
+                double *values;
+                int *rowsIndices;
+                int *colsIndices;
+                int *depthsIndices;
+                int nonZeroCount;
+                int rows;
+                int cols;
+                int depth;
+                } COOMatrix;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+
+       <p>The structures are all in place. Let's move on to the various tests <a href="Result.html"> <strong> carried out.</strong></a> </p></p>     
+
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 C.TOULER - Z.ZIAD - A. EL GODE - M.NAIM - Y.REDOUANE. All rights reserved.</p>
+    </footer>
+</body>
+</html>

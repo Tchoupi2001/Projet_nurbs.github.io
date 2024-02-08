@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Recap</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fff; /* Set background color to white */
+        }
+        header, footer { 
+            background-color: #003366; 
+            color: white; 
+            text-align: center; 
+            padding: 20px 0; 
+        }
+        .content { 
+            margin: 0 auto; /* Center the content */
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Set width to 100% */
+            border-radius: 10px; /* Added border-radius for smoother edges */
+        }
+        h1, h2 {
+            font-size: 3em;
+            color: #004488;
+            text-align: center;
+            margin: 40px 0 20px;
+            padding: 10px 0;
+            border-bottom: 4px solid #003366;
+            display: inline-block;
+            width: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        h1:hover, h2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #080808;
+            margin-bottom: 20px;
+        }
+        .image-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-group img { 
+            max-width: 100%; /* Ensures images don't exceed container width */
+            display: block; /* Centers the image */
+            margin: 0 auto; /* Centers the image */
+        }
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        footer p {
+            margin: 0; /* Removes default paragraph margin in the footer */
+        }
+        nav ul { 
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0;
+            text-align: center; 
+        }
+        nav ul li { 
+            display: inline; 
+            margin: 0 10px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Recap of the project</a></li>
+                <li><a href="Problem definition.html">Problem definition</a></li>
+                <li><a href="architecture.html"> Code architechture </a></li>
+                <li><a href="Result.html">Results</a></li> 
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <section id="TOPOLIGICAL OPTIMIZTION">
+            <h2>TOPOLOGICAL OPTIMIZATION</h2>
+            <p>This is a mathematical method used to determine the optimum distribution of materials in a given volume,
+                 while respecting specific constraints. This approach is based on topological principles, which study 
+                 the properties of shapes and spatial configurations.</p>
+            <p>In the context of topological optimization, the aim is to find the most efficient arrangement
+                 of materials within a defined region, in order to maximize the performance of the system or 
+                 structure while minimizing the use of resources. This can include objectives such as weight 
+                 reduction, optimizing stiffness or strength, or minimizing manufacturing costs.</p>
+            <p>Our approach involves the formulation of a mathematical optimization problem in the form 
+                of the SIMP method.</p>
+        </section>
+
+        <section id="SIMP(Solid Isotropic Material with Penalisation)">
+            <h2>SIMP(Solid Isotropic Material with Penalisation)</h2>
+            <p>Solid Isotropic Material with Penalization (SIMP) is a method commonly used in topological optimization to represent the distribution of materials in a given volume. This method is based on an effective density approach, where materials are considered to be present or absent in each finite element of the structure.</p>
+            <img src="SIMP.png" alt="SIMP Method" style="width: 70%; margin: 0 200px;">
+            <p>By integrating NURBS into the SIMP-based topological optimization process, 
+                complex geometries can be modeled with high accuracy while simultaneously 
+                optimizing material distribution to achieve lightweight, efficient designs. 
+                This combination of techniques makes the most of the advantages of NURBS's 
+                precise geometric representation, while optimizing structural 
+                performance through SIMP's efficient topological optimization approach.</p>
+        </section>
+
+        <section>
+            <h2>NURBS(Non-Uniform Rational B-Splines)</h2>
+            <p>The NURBS surface is defined as:</p>
+            
+            <p>
+            \begin{equation*}
+            S(u,v) = \sum_{i=0}^{n_u} \sum_{j=0}^{n_v} R_{i,j}(u,v) P_{i,j}
+            \end{equation*}
+            where:
+            </p>
+            
+            <p>- \( R_{i,j}(u,v) \): Piecewise Rational Basis Functions</p>
+            <p>-\(P_{i,j}= x_{i,j} , y_{i,j}, z_{i,j}\): Control Points</p>
+            <p>   
+            \begin{equation*}
+                R_{i,j}(u,v) = \frac{N_{i,p}(u)N_{j,q}(v)w_{i,j}}{\sum_{k=0}^{n_u} \sum_{l=0}^{n_v} N_{k,p}(u)N_{l,q}(v)w_{k,l}}
+            \end{equation*}
+            where:\
+            </p>- \(N_{i,p}(u), N_{j,q}(v)\): Blending Functions</p>
+            <p>- \(p\) and \(q\): NURBS Degrees along \(u\) and \(v\) directions</p>
+            <p> \(w_{i,j}\): Weights</p>
+            \begin{equation*}
+                N_{i,0}(u) = 
+                \begin{cases} 
+                    1 & \text{if } U_i \leq u < U_{i+1} \\
+                    0 & \text{otherwise}
+                \end{cases}
+            \end{equation*}
+            \begin{equation*}
+                N_{i,p}(u) = \frac{u - U_i}{U_{i+p} - U_i} N_{i,p-1}(u) + \frac{U_{i+p+1} - u}{U_{i+p+1} - U_{i+1}} N_{i+1,p-1}(u)
+            \end{equation*}
+
+                    
+                <div class="equation-box">
+                    \begin{equation*}
+                        R_{i,j} = 0 \text{ si } (u,v) \text{ est à l'extérieur de } [ U_i, U_{i+p+1}[ \times [ V_j, V_{j+q+1}[
+                    \end{equation*}
+                </div>
+
+
+             
+                <h2>Exemple of NURBS</h2>
+              
+            
+                <div style="display: flex; justify-content: center;">
+                    <img src="NURBS_3-D_surface.gif" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
+                    <img src="Surface_modelling.svg.png" alt="Équation NURBS" style="width: 30%; margin: 0 10px;">
+                    
+                </div> 
+
+                <h2>SIMP Method for Minimum Compliance Problem</h2>
+                <div class="block">
+                    <p>The optimisation problem can be resumn like that</p>
+                    <!-- Équation LaTeX -->
+                    <script type="text/javascript">
+                        window.onload = function() {
+                            MathJax.typeset();
+                        };
+                    </script>
+                    <div id="equation">
+                        \[
+                        \begin{aligned}
+                        & \underset{\rho_e}{\text{min}}
+                        & & c(\rho_e)  \\
+                        & \text{subject to:}
+                        & & [K]\{U_{FEM}\} = \{F\} \\
+                        & & & V(\rho_e) = f V_{\text{tot}} \\
+                        & & & \rho_{\text{min}} \leq \rho_e \leq 1, \quad e = 1, \ldots, N_e
+                        \end{aligned}
+                        \]
+                    </div>
+
+                    <div id="equation">
+                        <!-- Contenu LaTeX -->
+                        \(\rho(u,v) = \sum_{i=0}^{n_u} \sum_{j=0}^{n_v} R_{i,j}(u,v) \bar{\rho}_{i,j}\)
+                
+                        where \(\bar{\rho}_{i,j}\) is the value of the fictitious density at each control point.
+                
+                        \(\bar{\rho}_{i,j}\) and \(w_{i,j}\) are collected in \(\boldsymbol{\xi}\) and \(\boldsymbol{\eta}\).
+                        
+                        \[
+                        \begin{aligned}
+                        & \underset{\boldsymbol{\xi},\boldsymbol{\eta}}{\text{min}}
+                        & & c(\rho(\boldsymbol{\xi},\boldsymbol{\eta}))  \\
+                        & \text{subject to:}
+                        & & [K]\{U_{FEM}\} = \{F\} \\
+                        & & & V(\rho_e) = f V_{\text{tot}} \\
+                        & & & \{ g(\boldsymbol{\xi} ,\boldsymbol{\eta}) \} \leq \{0\}
+                        \end{aligned}
+                        \]
+                    </div>
+                </div>
+            
+        </section>
+
+        <section>
+            <h2>Problem definition</h2>
+
+            <p>The SIMP method, in conjunction with NURBS, is coded in Python, and its simple, 
+                concise syntax offers great flexibility and advanced functionality thanks to its
+                 multiple libraries. However, since its use in memory 
+                is uncontrolled, very large pieces of code are often difficult to execute.</p>
+
+            <p>As a result, switching to C is a more reliable solution, since it has controlled 
+                memory and offers the possibility of developing parallelism (which is also present
+                 in Python, of course).</p>
+
+                <div class="equation-box">
+                \begin{equation*}
+                \text{Goal: convert computations to a lower level language which is C}
+                \end{equation*}
+            </div>
+            
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 C.TOULER - Z.ZIAD - A. EL GODE - M.NAIM - Y.REDOUANE. All rights reserved.</p>
+    </footer>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.min.js"></script>
+</body>
+</html>
